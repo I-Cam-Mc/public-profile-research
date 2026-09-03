@@ -29,7 +29,7 @@
   "scripts": {
     "app": "node server/local-server.mjs",
     "research": "node bin/ppr.mjs run",
-    "test": "node --test tests",
+    "test": "node scripts/run-tests.mjs",
     "validate": "node scripts/verify-case.mjs",
     "validate-browser": "node scripts/verify-browser-receipt.mjs",
     "validate-visual": "node scripts/verify-visual-receipt.mjs",
