@@ -1,0 +1,21 @@
+{
+  "name": "public-profile-research-skill",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "playwright-core": "1.61.1"
+  },
+  "scripts": {
+    "test": "node --test tests",
+    "validate": "node scripts/verify-case.mjs",
+    "validate-browser": "node scripts/verify-browser-receipt.mjs",
+    "validate-visual": "node scripts/verify-visual-receipt.mjs",
+    "validate-visual-review": "node scripts/verify-visual-review.mjs",
+    "record-visual-review": "node scripts/record-visual-review.mjs",
+    "capture-report": "node scripts/capture-report-screenshots.mjs"
+  }
+}
