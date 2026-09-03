@@ -118,7 +118,6 @@ export function createPublicFetch(options = {}) {
       if (callerSignal?.aborted) forwardAbort();
       else callerSignal?.addEventListener("abort", forwardAbort, { once: true });
       const timer = setTimeout(() => controller.abort(new Error(`Public fetch exceeded its ${timeoutMs}ms deadline`)), remaining);
-      timer.unref?.();
       let response;
       try {
         response = await fetchImpl(current.href, { ...currentOptions, signal: controller.signal, redirect: "manual" });
