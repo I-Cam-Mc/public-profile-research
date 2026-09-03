@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "contract_type": "research_intake",
+  "research_state": "not_run",
+  "research_mode": "insight",
+  "relationship_to_subject": "third_party",
+  "corpus_scope": "public_only",
+  "delivery_visibility": "private",
+  "retention_policy": "local_until_deleted",
+  "subject": {
+    "display_name": "The Octocat",
+    "identity_anchors": [
+      "https://github.com/octocat"
+    ],
+    "identity_status": "confirmed"
+  },
+  "purpose": "general",
+  "depth": "quick",
+  "cost_policy": "free_tools_only",
+  "modules": [
+    "identity",
+    "projects"
+  ],
+  "custom_instructions": "",
+  "analysis_policy": {
+    "distinguish_public_persona_from_private_personality": true,
+    "controversies_require_corroboration_and_response_context": true,
+    "credibility_is_claim_specific_not_a_global_score": true,
+    "missing_evidence_supports_neither_reassurance_nor_suspicion": true
+  }
+}

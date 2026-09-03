@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/I-Cam-Mc/public-profile-research/main/schemas/intake.schema.json",
+  "title": "Public Profile Research intake",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_type",
+    "research_state",
+    "research_mode",
+    "relationship_to_subject",
+    "corpus_scope",
+    "delivery_visibility",
+    "retention_policy",
+    "subject",
+    "purpose",
+    "depth",
+    "cost_policy",
+    "modules",
+    "custom_instructions",
+    "analysis_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "contract_type": { "const": "research_intake" },
+    "research_state": { "const": "not_run" },
+    "research_mode": { "enum": ["insight", "bounded_census", "maximum_public_coverage"] },
+    "relationship_to_subject": { "enum": ["self", "authorised_representative", "third_party"] },
+    "corpus_scope": { "enum": ["public_only", "public_plus_subject_provided"] },
+    "delivery_visibility": { "const": "private" },
+    "retention_policy": { "type": "string", "minLength": 1 },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display_name", "identity_anchors", "identity_status"],
+      "properties": {
+        "display_name": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "identity_anchors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "maxItems": 25,
+          "items": { "type": "string", "format": "uri", "pattern": "^https://", "maxLength": 2048 }
+        },
+        "identity_status": { "enum": ["unconfirmed", "candidates", "confirmed", "conflict"] }
+      }
+    },
+    "purpose": { "enum": ["self_audit", "founder_diligence", "investor_diligence", "dating_safety", "marketplace_safety", "journalism", "general"] },
+    "depth": { "enum": ["quick", "standard", "deep", "maximum"] },
+    "cost_policy": { "const": "free_tools_only" },
+    "modules": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": ["identity", "current_activity", "timeline", "career", "projects", "companies", "public_impression", "public_persona", "credibility", "controversies", "professional_network", "media", "code", "commercial_activity"]
+      }
+    },
+    "custom_instructions": { "type": "string", "maxLength": 10000 },
+    "analysis_policy": { "type": "object" }
+  }
+}

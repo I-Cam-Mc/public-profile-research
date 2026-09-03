@@ -1,8 +1,25 @@
 {
   "name": "public-profile-research-skill",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
+  "description": "Open-source public-profile research skill, collector and evidence-linked report builder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I-Cam-Mc/public-profile-research.git"
+  },
+  "homepage": "https://i-cam-mc.github.io/public-profile-research/",
+  "keywords": [
+    "agent-skill",
+    "public-profile",
+    "research",
+    "digital-footprint",
+    "evidence"
+  ],
   "type": "module",
+  "bin": {
+    "ppr": "bin/ppr.mjs"
+  },
   "engines": {
     "node": ">=22"
   },
@@ -10,6 +27,8 @@
     "playwright-core": "1.61.1"
   },
   "scripts": {
+    "app": "node server/local-server.mjs",
+    "research": "node bin/ppr.mjs run",
     "test": "node --test tests",
     "validate": "node scripts/verify-case.mjs",
     "validate-browser": "node scripts/verify-browser-receipt.mjs",

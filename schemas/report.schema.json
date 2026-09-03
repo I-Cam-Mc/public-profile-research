@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/I-Cam-Mc/public-profile-research/main/schemas/report.schema.json",
+  "title": "Public Profile Research report",
+  "type": "object",
+  "required": ["schema_version", "report_type", "run_id", "generated_at", "research_state", "subject", "research_mode", "coverage", "findings", "analysis", "limitations"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "report_type": { "const": "public_profile_research" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "research_state": { "enum": ["complete", "partial", "failed"] },
+    "subject": { "type": "object" },
+    "purpose": { "type": "string" },
+    "research_mode": { "enum": ["insight", "bounded_census", "maximum_public_coverage"] },
+    "coverage": {
+      "type": "object",
+      "required": ["statement", "declared_targets", "collected_targets", "partial_targets", "unavailable_targets", "sources"],
+      "properties": {
+        "statement": { "type": "string", "minLength": 1 },
+        "declared_targets": { "type": "integer", "minimum": 0 },
+        "collected_targets": { "type": "integer", "minimum": 0 },
+        "partial_targets": { "type": "integer", "minimum": 0 },
+        "unavailable_targets": { "type": "integer", "minimum": 0 },
+        "discovery_targets": { "type": "integer", "minimum": 0 },
+        "collected_discovery_targets": { "type": "integer", "minimum": 0 },
+        "sources": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["category", "statement", "evidence_ids", "confidence"],
+        "properties": {
+          "category": { "type": "string", "minLength": 1 },
+          "statement": { "type": "string", "minLength": 1 },
+          "evidence_ids": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "confidence": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "highlights": { "type": "object" },
+    "analysis": { "type": "object" },
+    "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  }
+}

@@ -2,4 +2,8 @@ node_modules/
 .DS_Store
 coverage/
 *.log
-
+public-profile-run*/
+public-profile-runs/
+.playwright/
+.playwright-cli/
+output/

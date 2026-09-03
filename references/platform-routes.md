@@ -20,7 +20,7 @@ The official archive API can close currently searchable public text when its pag
 
 ### Enumeration and visual review
 
-Use stable current-profile IDs when exposed. The official embed player is a legitimate fallback for playback review. Require a ready event, non-zero duration, time progression and ended state or an exact terminal player error. An HTTP 200 player shell is not a completed video review.
+Start with `yt-dlp` for supported public profile or video metadata and available subtitles. Preserve the exact limit, item identifiers and any terminal error. Use stable current-profile IDs when exposed. The official embed player is a legitimate fallback for playback review. Require a ready event, non-zero duration, time progression and ended state or an exact terminal player error. An HTTP 200 player shell is not a completed video review.
 
 ### Speech
 

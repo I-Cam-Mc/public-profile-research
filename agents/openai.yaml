@@ -1,6 +1,6 @@
 interface:
   display_name: "Public Profile Research"
-  short_description: "Auditable public-person corpus and briefing"
-  default_prompt: "Use $public-profile-research to build an evidence-bound public corpus and briefing for a named person."
+  short_description: "Research a public footprint with evidence"
+  default_prompt: "Use $public-profile-research to ask for one public profile link, perform the available public-source research, and produce an evidence-linked private profile with honest coverage limits."
 policy:
   allow_implicit_invocation: true

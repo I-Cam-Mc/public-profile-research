@@ -16,7 +16,7 @@ export const PLAYWRIGHT_CORE_CRITICAL_PATHS = Object.freeze([
 
 const EXPECTED_PACKAGE_NAME = "playwright-core";
 const EXPECTED_PACKAGE_VERSION = "1.61.1";
-const EXPECTED_LOCK_SHA256 = "630c4c89bb8df7a33b3c1155b259997d99cc411e45661041bcd540cd5eee5879";
+const EXPECTED_LOCK_SHA256 = "97d09675d4ed182d7eb1022539aec11739eb016c84dffb5bcb51663d1da869a8";
 const EXPECTED_RESOLVED = "https://registry.npmjs.org/playwright-core/-/playwright-core-1.61.1.tgz";
 const EXPECTED_INTEGRITY = "sha512-h7Qlt6m4REp25qvIdvbDtVmD4LqVXfpRxhORv9L0jzETM05p4fuPJ3dKyuSXQxDSbXnmS79HAgi9589lGSpLkg==";
 

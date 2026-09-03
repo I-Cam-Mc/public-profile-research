@@ -54,7 +54,7 @@ test("attests the pinned execution-critical Playwright runtime and lock identity
   });
   assert.deepEqual(receipt.package_lock, {
     relative_path: "package-lock.json",
-    sha256: "630c4c89bb8df7a33b3c1155b259997d99cc411e45661041bcd540cd5eee5879",
+    sha256: "97d09675d4ed182d7eb1022539aec11739eb016c84dffb5bcb51663d1da869a8",
     lockfile_version: 3,
     dependency_path: "node_modules/playwright-core",
     package_name: "playwright-core",
